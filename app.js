@@ -19,8 +19,10 @@ setInterval(() => {
     timeSinceLastCleansing += 1000;
     // Format the time since last cleansing into days, hours, and minutes
     const days = Math.floor(timeSinceLastCleansing / (24 * 60 * 60 * 1000));
-    const hours = Math.floor((timeSinceLastCleansing - (days * (24 * 60 * 60 * 1000))) / 3600000);
-    const minutes = Math.floor((timeSinceLastCleansing - (hours * 3600000) - (days * (24 * 60 * 60 * 1000))) / 60000);
+    const daysMs = days * 24 * 60 * 60 * 1000;
+    const hours = Math.floor((timeSinceLastCleansing - daysMs) / 3600000);
+    const hoursMs = hours * 3600000;
+    const minutes = Math.floor((timeSinceLastCleansing - daysMs - hoursMs) / 60000);
     // Update the timer
     timer.innerHTML = `
         <span class="time-value">${days}</span> <span class="time-label">days</span> 
