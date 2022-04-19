@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shit Box Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --header-bg: #4b9609;
+            font-family: 'Karla', sans-serif;
+            font-size: 62.5%;
+            line-height: 1;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        h1, h2 {
+            color: #FFFFFF;
+            font-family: 'Shadows Into Light', sans-serif;
+            margin: 0;
+        }
+        h1 {
+            font-size: 5rem;
+        }
+        h2 {
+            font-size: 15rem;
+        }
+        #header {
+            background-color: var(--header-bg);
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem 2rem 3rem 2rem;
+        }
+        .time-value {
+            background-color: #c8c0de;
+            padding: 0 0.2rem;
+        }
+        .time-label {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+        .timer-wrap {
+            font-size: 2.5rem;
+            padding: 2rem;
+            position: relative;
+        }
+        #reset {
+            background: none;
+            border: 2px solid #c8c0de;
+            padding: 1rem;
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Next up...</h1>
+        <h2 id="name"></h2>
+    </header>
+    <div class="timer-wrap">
+        <span id="timer"></span>
+    </div>
+    <button id="reset">I cleaned it.</button>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
