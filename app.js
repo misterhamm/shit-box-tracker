@@ -9,7 +9,7 @@ const name = document.getElementById('name');
 const button = document.getElementById('reset');
 const timer = document.getElementById('timer');
 
-// timeSinceLastCleansing = (3 * 24 * 60 * 60 * 1000) - 3000;
+ timeSinceLastCleansing = (3 * 24 * 60 * 60 * 1000) - 3000;
 
 // Set name to the first name in shitLords
 name.innerHTML = shitLords[0];
@@ -17,12 +17,13 @@ name.innerHTML = shitLords[0];
 // Once per second, increment the time since last cleansing by 1000ms and update the timer
 setInterval(() => {
     timeSinceLastCleansing += 1000;
-    // Format the time since last cleansing into hours, minutes, and seconds
-    const hours = Math.floor(timeSinceLastCleansing / 3600000);
-    const minutes = Math.floor((timeSinceLastCleansing - (hours * 3600000)) / 60000);
-    const seconds = Math.floor((timeSinceLastCleansing - (hours * 3600000) - (minutes * 60000)) / 1000);
+    // Format the time since last cleansing into days, hours, and minutes
+    const days = Math.floor(timeSinceLastCleansing / (24 * 60 * 60 * 1000));
+    const hours = Math.floor((timeSinceLastCleansing - (days * (24 * 60 * 60 * 1000))) / 3600000);
+    const minutes = Math.floor((timeSinceLastCleansing - (hours * 3600000) - (days * (24 * 60 * 60 * 1000))) / 60000);
     // Update the timer
     timer.innerHTML = `
+        <span class="time-value">${days}</span> <span class="time-label">days</span> 
         <span class="time-value">${hours}</span> <span class="time-label">hours</span> 
         <span class="time-value">${minutes}</span> <span id="time-label">minutes</span>`;
 }, 1000);
