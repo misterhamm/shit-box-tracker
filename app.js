@@ -5,14 +5,14 @@ const shitColor = '	#cc060c';
 
 
 let timeSinceLastCleansing = 0;
-const name = document.getElementById('name');
+const shitLord = document.getElementById('name');
 const button = document.getElementById('reset');
 const timer = document.getElementById('timer');
 
  timeSinceLastCleansing = (3 * 24 * 60 * 60 * 1000) - 3000;
 
-// Set name to the first name in shitLords
-name.innerHTML = shitLords[0];
+// Set shitLord to the first shitLord in shitLords
+shitLord.innerHTML = shitLords[0];
 
 // Once per second, increment the time since last cleansing by 1000ms and update the timer
 setInterval(() => {
@@ -44,16 +44,15 @@ setInterval(() => {
 }, 1000);
 
 
-// When the button is clicked, reset the time since last cleansing to 0 and update the name to the next name in the list.
+// When the button is clicked, reset the time since last cleansing to 0 and update the shitLord to the next shitLord in the list.
 // When the end of the list is reached, start over at the beginning.
-button.addEventListener('click', () => {
+document.body.addEventListener('click', () => {
     timeSinceLastCleansing = 0;
-    console.log(shitLords.indexOf(name.innerHTML))
-    if (shitLords.indexOf(name.innerHTML) === shitLords.length - 1) {
-        name.innerHTML = shitLords[0];
+    if (shitLords.indexOf(shitLord.innerHTML) === shitLords.length - 1) {
+        shitLord.innerHTML = shitLords[0];
     } 
     else {
-        name.innerHTML = shitLords[shitLords.indexOf(name.innerHTML) + 1];
+        shitLord.innerHTML = shitLords[shitLords.indexOf(shitLord.innerHTML) + 1];
     }
 });
 
