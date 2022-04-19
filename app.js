@@ -9,7 +9,7 @@ const shitLord = document.getElementById('name');
 const button = document.getElementById('reset');
 const timer = document.getElementById('timer');
 
- timeSinceLastCleansing = (3 * 24 * 60 * 60 * 1000) - 3000;
+// timeSinceLastCleansing = (3 * 24 * 60 * 60 * 1000) - 10000;
 
 // Set shitLord to the first shitLord in shitLords
 shitLord.innerHTML = shitLords[0];
